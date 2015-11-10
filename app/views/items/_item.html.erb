@@ -1,6 +1,15 @@
-<li id="item-<%= item.id %>">
-  <span class="description"><%= item.description %></span>
+<li class="item-list", id="item-<%= item.id %>">
+
+  <% if item.image? %>
+　　<%= image_tag item.image.thumb.url %>
+　　
+　<% else %>
+　<% end %>
+　
   <span class="timestamp">
     Posted <%= time_ago_in_words(item.created_at) %> ago.
+    <% if current_user == item.user %>
+      <%= link_to "delete", item, method: :delete, data: { confirm: "削除します。"}%>
+    <% end %>
   </span>
 </li>

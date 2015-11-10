@@ -13,8 +13,16 @@ class ItemsController < ApplicationController
     end
   end
   
+  def destroy
+    @item =current_user.items.find_by(id: params[:id])
+    return redirect_to root_url if @item.nil?
+    @item.destroy
+    flash[:success] = "投稿を削除しました。"
+    redirect_to request.referrer || root_url
+  end
+  
   private
   def item_params
-    params.require(:item).permit(:name, :description, :price)
+    params.require(:item).permit(:name, :description, :price, :image)
   end
 end

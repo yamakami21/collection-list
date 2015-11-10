@@ -1,16 +1,27 @@
 <h1>投稿</h1>
 <%= form_for(@item) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
-        <div class="field">
+        <div class="field form-horizontal">
+            <%= f.label :image, "画像", class: "text-left col-md-2 control-label" %>
+            <div class="col-md-10">
+                <%= f.file_field :image, class: "form-control" %> 
+        　　</div>
+
+            <%= f.label :name, "名前", class: "col-md-2 control-label" %>
+            <div class="col-md-10">
+                <%= f.text_field :name, class: "form-control", placeholder: "名前" %>
+            </div>
             
-            <%= f.label :name, "名前" %>
-            <%= f.text_field :name, class: "form-control", placeholder: "名前" %>
+            <%= f.label :description, "説明", class: "col-md-2 control-label" %>
+            <div class="col-md-10">
+                <%= f.text_area :description, class: "form-control",placeholder: "この植物の特徴は..." %>
+            </div>
             
-            <%= f.label :description, "説明" %>
-            <%= f.text_area :description, class: "form-control",placeholder: "この植物の特徴は..." %>
+            <%= f.label :price, "参考価格", class: "col-md-2 control-label" %>
+            <div class="col-md-10">
+                <%= f.number_field :price, class: "form-control" %>
+            </div>
             
-            <%= f.label :price, "参考価格" %>
-            <%= f.number_field :price, class: "form-control" %>
         </div>
-    <%= f.submit "投稿", class: "btn btn-primary" %>
+    <%= f.submit "投稿", class: "col-md-offset-4 col-md-4 btn btn-primary" %>
 <% end %>

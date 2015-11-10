@@ -119,3 +119,11 @@ input {
     color: $state-danger-text;
   }
 }
+
+.item-list{
+  display:table;
+}
+.item-list{
+  display:table-cell;
+  vertical-align:middle;
+}
