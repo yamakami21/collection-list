@@ -1,0 +1,16 @@
+<h1>投稿</h1>
+<%= form_for(@item) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+        <div class="field">
+            
+            <%= f.label :name, "名前" %>
+            <%= f.text_field :name, class: "form-control", placeholder: "名前" %>
+            
+            <%= f.label :description, "説明" %>
+            <%= f.text_area :description, class: "form-control",placeholder: "この植物の特徴は..." %>
+            
+            <%= f.label :price, "参考価格" %>
+            <%= f.number_field :price, class: "form-control" %>
+        </div>
+    <%= f.submit "投稿", class: "btn btn-primary" %>
+<% end %>

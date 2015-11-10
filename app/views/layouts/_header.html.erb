@@ -14,7 +14,7 @@
             <div class="collapse navbar-collapse" id="site-menu">
                 <ul class="nav navbar-nav navbar-right">
                     <% if logged_in? %>
-                        <li><%= link_to "投稿", "#", class: "navbar-btn" %></li>
+                        <li><%= link_to "投稿", new_item_path, class: "navbar-btn" %></li>
                         <li class="dropdown">
                             <a href="#"  class="dropdown-toggle navbar-btn" data-toggle="dropdown">
                                 <span class="glyphicon glyphicon-th-large"></span> <%= current_user.name %><b class="caret"></b>
