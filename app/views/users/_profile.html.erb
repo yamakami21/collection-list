@@ -1,0 +1,31 @@
+<div class="user-profile">
+    <div class="icon">
+        <%= gravatar_for user, size: 100 %>
+    </div>
+    <div class="name">
+        <h1><%= user.name %></h1>
+    </div>
+    <div class="status">
+        <ul>
+            <li>
+                <div class="status-label">フォロー</div>
+                <div>
+                    <%= link_to current_user.number_followings, "#", class: "status-value"%>
+                </div>
+            </li>
+            <li>
+                <div class="status-label">フォロワー</div>
+                <div>
+                    <%= link_to current_user.number_followers, "#", class: "status-value"%>
+                </div>
+            </li>
+            <li>
+                <div class="status-label">お気に入り</div>
+                <div>
+                    <%= link_to current_user.number_followings, "#", class: "status-value"%>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <%= render 'follow_form' if logged_in? %>
+</div>
