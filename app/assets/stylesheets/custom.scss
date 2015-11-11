@@ -64,27 +64,3 @@ p {
 
 
 
-
-.item-list{
-  display:table-cell;
-  vertical-align:middle;
-  table-layout: fixed;
-    width:150px;
-    height:150px;
-    overflow:hidden;
-    position:relative;
-   border-radius: 20px;
-}
-
-
-
-/* mixins, variables, etc. */
-
-$gray-medium-light: #eaeaea;
-
-@mixin box_sizing {
-  -moz-box-sizing:    border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing:         border-box;
-}
-
