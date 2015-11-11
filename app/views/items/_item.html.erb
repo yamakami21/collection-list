@@ -1,7 +1,7 @@
 <div class="container">
     <div class="container-inner inner-default clearfix">
 
-        <% if @user.items.any? %>
+        <% if current_user.items.any? %>
         <div class="item-box">
             <div class="image">
                 <div class="img-wrap">
@@ -20,7 +20,7 @@
                 </span>    
                 <span class="delete">
                     <% if current_user == item.user %>
-                      <%= link_to "delete", item, method: :delete, data: { confirm: "削除します。"}%>
+                      <%= link_to "削除", item, method: :delete, data: { confirm: "削除します。"}%>
                     <% end %>
                 </span>
             </div>

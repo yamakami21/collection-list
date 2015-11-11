@@ -39,4 +39,8 @@ class User < ActiveRecord::Base
     def number_followers
         follower_relationships.count
     end
+    
+    def feed_items
+        Item.where(user_id: following_user_ids + [self.id])
+    end
 end
