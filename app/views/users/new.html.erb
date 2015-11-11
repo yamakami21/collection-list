@@ -1,21 +1,28 @@
-<h1>Sign Up</h1>
-<div class="row">
-    <div class="col-md-6 col-md-offset-3">
+<div class="box">
+    
+    <h1 class="box-title">Sign Up</h1>
+    <div class="box-inner">
         <%= form_for(@user) do |f| %>
-        
             <%= render 'shared/error_messages', object: f.object %>
             <%= f.label :name, "ユーザー名" %>
-            <%= f.text_field :name, class: "form-control", placeholder: "ニックネームを入力して下さい。" %>
-
-            <%= f.label :email, "メールアドレス" %>
-            <%= f.text_field :email, class: "form-control", placeholder: "メールアドレスを入力して下さい。"%>
-
-            <%= f.label :password, "パスワード" %>
-            <%= f.password_field :password, class: "form-control", placeholder: "パスワードを入力して下さい。" %>
+            <div class="form-group">
+                <%= f.text_field :name, class: "form-control", placeholder: "ニックネームを入力して下さい。" %>
+            </div>
     
-            <%= f.password_field :password_confirmation, class: "form-control", placeholder: "パスワードを再入力して下さい。" %>
-            
-            <%= f.submit "登録", class: "btn btn-large btn-success"%>
+            <%= f.label :email, "メールアドレス" %>
+            <div class="form-group">
+                <%= f.text_field :email, class: "form-control", placeholder: "メールアドレスを入力して下さい。"%>
+            </div>
+    
+            <%= f.label :password, "パスワード" %>
+            <div class="form-group">
+                <%= f.password_field :password, class: "form-control", placeholder: "パスワード" %>
+            </div>
+    
+            <%= f.password_field :password_confirmation, class: "form-control", placeholder: "パスワード(確認)" %>
+            <div class="submit-group">
+                <%= f.submit "登録", class: "btn btn-large btn-success"%>
+            </div>
         <% end %>
     </div>
 </div>
