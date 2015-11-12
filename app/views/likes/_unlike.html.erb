@@ -1,0 +1,6 @@
+<%= form_for(current_user.likes.find_by(item_id: item.id),
+             html: { method: :delete },
+             remote: true) do |f| %>
+  <%= hidden_field_tag :item_id, item.id %>
+  <%= f.submit "Unlike" %>
+<% end %>

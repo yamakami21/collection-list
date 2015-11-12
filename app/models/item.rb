@@ -7,5 +7,8 @@ class Item < ActiveRecord::Base
   
   validates :price, presence: true, numericality: true
   
+  has_many :likes
+  has_many :liking_users, through: :likes, source: :user
+  
   mount_uploader :image, ImageUploader
 end

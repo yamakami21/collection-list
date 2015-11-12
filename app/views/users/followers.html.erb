@@ -1,0 +1,12 @@
+    <div class="col-md-8">
+
+        <h1>List</h1>
+        <ol class="followings-followers">
+            <% @followers.each do |followers| %>
+                <div class="gravatar"><%= gravatar_for followers %></div>
+                <li class="name"><%= link_to followers.name, user_path(followers.id)%></li>
+                
+                <br>
+            <% end %>
+        </ol>
+    </div>

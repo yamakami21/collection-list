@@ -21,6 +21,8 @@ class User < ActiveRecord::Base
                                       dependent:   :destroy
     has_many :follower_users, through: :follower_relationships, source: :follower
     
+    has_many :likes
+    has_many :liked_items, through: :likes, source: :item
     
     def follow(other_user)
         following_relationships.create(followed_id: other_user.id)
@@ -42,5 +44,15 @@ class User < ActiveRecord::Base
     
     def feed_items
         Item.where(user_id: following_user_ids + [self.id])
+    end
+    
+    def like(other_item)
+        likes.create(item_id: other_item.id)
+    end
+    def unlike(other_item)
+        like.find_by(item_id: other_item.id).destroy
+    end
+    def liking?(other_item)
+        liked_items.include?(other_item)
     end
 end

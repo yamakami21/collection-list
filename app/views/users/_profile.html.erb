@@ -10,19 +10,19 @@
             <li>
                 <div class="status-label">フォロー</div>
                 <div>
-                    <%= link_to current_user.number_followings, "#", class: "status-value"%>
+                    <%= link_to user.number_followings, followings_user_path(user), class: "status-value"%>
                 </div>
             </li>
             <li>
                 <div class="status-label">フォロワー</div>
                 <div>
-                    <%= link_to current_user.number_followers, "#", class: "status-value"%>
+                    <%= link_to user.number_followers, followers_user_path(user), class: "status-value"%>
                 </div>
             </li>
             <li>
                 <div class="status-label">お気に入り</div>
                 <div>
-                    <%= link_to current_user.number_followings, "#", class: "status-value"%>
+                    <%= link_to user.number_followings, "#", class: "status-value"%>
                 </div>
             </li>
         </ul>
