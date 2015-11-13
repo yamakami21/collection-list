@@ -1,28 +1,32 @@
 <div class="box2">
-    <h1>投稿</h1>
     <div>
         <%= form_for(@item) do |f| %>
             <%= render 'shared/error_messages', object: f.object %>
             <div class="field form-horizontal">
-                
+ 
                 <div class="form-group", id="name_form">
-                    <%= f.text_field :name, class: "form-control", id: "name_form", placeholder: "名前" %>
+                    <%= f.text_field :name, class: "form-control", id: "name_form", placeholder: "タイトル" %>
                 </div>
                 
                 <div class="form-group">
-                    <%= f.text_area :description, class: "form-control", id: "description_form",placeholder: "この植物の特徴は..." %>
+                    <%= f.text_area :description, :size=>"60x10", class: "form-control", id: "description_form",placeholder: "この植物の特徴は..." %>
                 </div>
-                                    
-                <%= f.label :image, "画像", class: "control-label", id: "image_form" %>
-                <div class="form-group">
-                    <%= f.file_field :image, class: "form-control" %> 
-            　　</div><%= f.label :price, "参考価格", class: "control-label"%>
+                
                 <div class="form-group">
                     <%= f.number_field :price, class: "form-control", id: "price_form",placeholder: "参考価格"  %>
                 </div>
+                
+                
+                <div class="form-group">
+                    <%= f.file_field :image %> 
+                </div>    
+            　　
+
             </div>
             <div class="submit-group">
-                <%= f.submit "投稿", class: "btn", id: "submit_button" %>
+                <%= button_tag :type => "submit", :class =>"btn btn-round btn-lg",id: "submit_button" do %>
+                  <i class="glyphicon glyphicon-pencil"></i> 投稿
+                <% end %>
             </div>
         <% end %>
     </div>

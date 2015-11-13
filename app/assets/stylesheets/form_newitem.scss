@@ -1,32 +1,32 @@
-
 // add item form
 .box2 {
-  max-width: 600px;
+  max-width: 800px;
   margin: 40px auto;
-//   border: 1px solid #ddd;
-//   background: #fafafa;
-//   box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-//   border-radius: 3px;
-//   .box-title {
-//     margin: 0;
-//     margin-bottom: 20px;
-//     padding: 30px 20px;
-//     font-weight: normal;
-//     background: #fff;
-//     border: none;
-//     border-top-left-radius: 3px;
-//     border-top-right-radius: 3px;
-//   }
-//   .box-inner {
-//     padding: 30px;
-//   }
-  input{
-      .form_control{
-         border:none;          
-      }
-    // border:none;
-//     background:none;
-    // padding: 30px;
+  padding-top: 10px;
+  
+  #name_form{
+    width: 100%;
+    font-size: 45px;
+    font-weight: bold;
+    outline: none;
+
+  }
+  input#name_form{
+    padding: 42px;
+    border:none;
+  }
+  #description_form{
+    width: 100%;
+    font-size: 20px;
+  }
+  input#description_form{
+    padding: 40px;
+    border:none;
+  }
+  #price_form{
+    font-size: 18px;
+  }
+  input#price_form{
+    max-width: 350px;
   }
 }
-

@@ -24,7 +24,7 @@
                                 <%= link_to "削除", item, method: :delete, data: { confirm: "削除します。"}%>
                             </span>
                         <% else %>
-                            <span class="like">
+                            <span id="like_form-<%= item.id %>">
                                 <%= render partial: 'likes/like_form',locals: { item: item } %>
                             </span>
                         <% end %>

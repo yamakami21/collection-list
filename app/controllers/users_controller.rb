@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :followings, :followers]
   
   def show
-    @items =@user.items
+    @items =@user.items.page(params[:page]).per(10)
   end
   
   def new

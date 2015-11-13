@@ -4,6 +4,7 @@
     <h3>植物一覧</h3>
       <%= render 'shared/feed' %>
     </div>
+    <%= paginate(@feed_items)%>
   </div>
 <% else %>
   <div class="center jumbotron">

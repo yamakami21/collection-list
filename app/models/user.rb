@@ -50,7 +50,7 @@ class User < ActiveRecord::Base
         likes.create(item_id: other_item.id)
     end
     def unlike(other_item)
-        like.find_by(item_id: other_item.id).destroy
+        likes.find_by(item_id: other_item.id).destroy
     end
     def liking?(other_item)
         liked_items.include?(other_item)

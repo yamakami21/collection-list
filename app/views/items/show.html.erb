@@ -1,2 +1,42 @@
-<div><%= @item.name %></div>
-<div><%= @item.description %></div>
+<div class="container-item">
+  <div class="container-inner inner-sm clearfix">
+    <div class="item-single-main">
+      <div class="image">
+        <div class="img-wrap">
+            <% if @item.image? %>
+          　　<%= image_tag @item.image.thumb.url %>
+          　<% else %>
+          　<% end %>
+        </div>
+      </div>
+      <div class="title">
+          <%= @item.name %>
+      </div>
+    </div>
+    <div class="item-single-side">
+      <div class="side-box">
+        <h4 class="side-box-title">概要</h4>
+        <div class="side-box-body">
+          <b>説明</b>
+          <br>
+          <%= @item.description %>
+          <br>
+          <b>参考価格</b>
+          <br>
+          ¥ <%= @item.price %>
+        </div>
+        
+      </div>
+      <div class="text-center">
+        
+      </div>
+        <% if logged_in? %>
+            <% if current_user == @item.user %>
+                <span class="delete">
+                    <%= link_to "削除", @item, method: :delete, data: { confirm: "削除します。"}%>
+                </span>
+            <% end %>
+        <% end %>
+    </div>
+  </div>
+</div>

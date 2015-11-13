@@ -4,7 +4,7 @@
             <% @followings.each do |followings| %>
                 <div class="gravatar"><%= gravatar_for followings %></div>
                 <li class="name"><%= link_to followings.name, user_path(followings.id)%></li>
-                <div class="profile"><%= followings.profile %></div>
+                
                 <br>
             <% end %>
         </ol>
