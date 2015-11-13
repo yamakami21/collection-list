@@ -1,0 +1,21 @@
+<div class="status-profile">
+    <h1 class= "text-left"><%= @user.name %> のお気に入り一覧</h1>
+    <HR class="hr">
+    <% @likings.each do |likings| %>
+        
+        <table class="status-profile-list">
+            <tr>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <% if likings.image? %>
+                  　　<%= image_tag likings.image.thumb.url %>
+                  　<% else %>
+                  　<% end %>
+                    <%= link_to likings.name, item_path(likings.id), class: "name" %></td>
+                    <td><%= likings.description%></td>
+
+            </tr>
+        </table>
+
+        <HR class="hr">
+    <% end %>
+</div>

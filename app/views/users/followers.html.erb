@@ -1,12 +1,17 @@
-    <div class="col-md-8">
+<div class="status-profile">
+    <h1 class= "text-left"><%= @user.name %> のフォロワーリスト</h1>
+    <HR class="hr">
+    <% @followers.each do |followers| %>
+        
+        <table class="status-profile-list">
+            <tr>
+                <td class="gravatar"><%= gravatar_for followers %></td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <%= link_to followers.name, user_path(followers.id), class: "name" %></td>
 
-        <h1>List</h1>
-        <ol class="followings-followers">
-            <% @followers.each do |followers| %>
-                <div class="gravatar"><%= gravatar_for followers %></div>
-                <li class="name"><%= link_to followers.name, user_path(followers.id)%></li>
-                
-                <br>
-            <% end %>
-        </ol>
-    </div>
+            </tr>
+        </table>
+
+        <HR class="hr">
+    <% end %>
+</div>

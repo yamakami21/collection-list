@@ -1,0 +1,21 @@
+.status-profile{
+    .text-left{
+        font-size: 25px;
+    }
+    .name{
+        font-size: 28px;
+        color: #111;
+        font-weight: bold;
+    }
+    .name:hover {
+      color: #808000;
+      text-decoration: none;
+    }
+    .status-profile-list{
+          margin: 40px;
+    }
+    .status {
+    text-align: center;
+    }
+
+}

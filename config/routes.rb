@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     member do
       get :followings
       get :followers
+      get :likings
     end
   end
   # resources :users
@@ -19,7 +20,6 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
   resources :items
   resources :likes, only: [:create, :destroy]
-  
 
   
 end

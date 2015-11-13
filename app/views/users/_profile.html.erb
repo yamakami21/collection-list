@@ -22,7 +22,7 @@
             <li>
                 <div class="status-label">お気に入り</div>
                 <div>
-                    <%= link_to user.number_followings, "#", class: "status-value"%>
+                    <%= link_to user.number_likes, likings_user_path(user), class: "status-value"%>
                 </div>
             </li>
         </ul>

@@ -55,4 +55,8 @@ class User < ActiveRecord::Base
     def liking?(other_item)
         liked_items.include?(other_item)
     end
+    
+    def number_likes
+        liked_items.count
+    end
 end

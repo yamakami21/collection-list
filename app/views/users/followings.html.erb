@@ -1,11 +1,19 @@
-    <div class="col-md-8">
-        <h1>List</h1>
-        <ol class="followings-followers">
-            <% @followings.each do |followings| %>
-                <div class="gravatar"><%= gravatar_for followings %></div>
-                <li class="name"><%= link_to followings.name, user_path(followings.id)%></li>
-                
-                <br>
-            <% end %>
-        </ol>
-    </div>
+<div class="status-profile">
+    <h1 class= "text-left"><%= @user.name %> のフォローリスト</h1>
+    <HR class="hr">
+    <% @followings.each do |followings| %>
+        
+        <table class="status-profile-list">
+            <tr>
+                <td class="gravatar"><%= gravatar_for followings %></td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <%= link_to followings.name, user_path(followings.id), class: "name" %></td>
+                <td>
+                    <!--<%= render 'users/follow_form' %>-->
+                </td>
+            </tr>
+        </table>
+
+        <HR class="hr">
+    <% end %>
+</div>

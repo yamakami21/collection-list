@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   
-  before_action :set_user, only: [:show, :followings, :followers]
+  before_action :set_user, only: [:show, :followings, :followers, :likings]
   
   def show
     @items =@user.items.page(params[:page]).per(10)
@@ -26,6 +26,9 @@ class UsersController < ApplicationController
   
   def followers
     @followers = @user.follower_users
+  end
+  def likings
+    @likings = @user.liked_items
   end
   
   private

@@ -11,4 +11,6 @@ class Item < ActiveRecord::Base
   has_many :liking_users, through: :likes, source: :user
   
   mount_uploader :image, ImageUploader
+  
+  
 end
