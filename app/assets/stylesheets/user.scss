@@ -13,10 +13,18 @@
   .name {
     margin-bottom: 15px;
     text-align: center;
+    font-weight: bold;
+    // font-size: 30px;
     h1 {
       text-shadow: 1px 1px 1px #fff;
     }
   }
+  .profile{
+    font-size: 18px;
+    text-align: center;  
+    color: #777;
+  }
+
   .status {
     text-align: center;
   }

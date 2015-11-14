@@ -5,6 +5,9 @@
     <div class="name">
         <h1><%= user.name %></h1>
     </div>
+    <div class="profile">
+        <%= user.profile %>
+    </div>
     <div class="status">
         <%= render 'follow_form' if logged_in? %>
         <br>

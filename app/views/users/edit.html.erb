@@ -1,4 +1,3 @@
-<h1>Edit profile</h1>
 <%= form_for(@user) do |f|%>
  <% if @user.errors.present? %>
     <div class = "alert alert-danger">
@@ -12,30 +11,33 @@
         </ul>
     </div>
     <% end %>
-    <div class="panel panel-default">
-    <div class="panel-heading">
-        プロフィール詳細設定
+    <div class="status-profile">
+        <h1 class= "text-left">アカウントの設定</h1>
+        <HR class="hr">
+            <table class="status-profile-list">
+                <tr>
+                    <td>
+                        <%= f.label :name, "ユーザーID" %>
+                        <%= f.text_field :name, class: "form-control", id: "form-large", placeholder: "名前"%>
+                    </td>
+                    <td class="btn-left">
+                        <%= f.submit "変更", class: "btn btn-lg btn-default btn-block" %>
+                    </td>
+                </tr>
+            </table>
+            <HR class="hr">
+            <table class="status-profile-list">
+                <tr>
+                    <td>
+                        <%= f.label :name, "プロフィール" %>
+                        <%= f.text_area :profile, :size=>"60x5", class: "form-control", placeholder: "プロフィール"%>
+                    </td>
+                    <td class="btn-left">
+                        <%= f.submit "変更", class: "btn btn-lg btn-left btn-default btn-block" %>
+                    </td>
+                </tr>
+            </table>
+    
+            
     </div>
-    <div class="panel-body">
-        <form class="form-horizontal">
-            <div class="form-group">
-                <label class ="col-sm-2 control-label">地域:</label>
-                <div class ="col-sm-10">
-                    <%= f.text_field :name, class: "form-control", placeholder: "地域"%>
-                </div>
-            </div>
-            <dr><dr/>
-            <div class="form-group">
-                <label class ="col-sm-2 control-label">プロフィール:</label>
-                <div class ="col-sm-10">
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <%= f.submit class: "btn-primary btn-block" %>
-                </div>
-            </div>
-        </form>
-    </div>
-    <br/>
 <% end %>

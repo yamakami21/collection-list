@@ -2,13 +2,11 @@
     <h1 class= "text-left"><%= @user.name %> のフォロワーリスト</h1>
     <HR class="hr">
     <% @followers.each do |followers| %>
-        
         <table class="status-profile-list">
             <tr>
                 <td class="gravatar"><%= gravatar_for followers %></td>
                 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <%= link_to followers.name, user_path(followers.id), class: "name" %></td>
-
             </tr>
         </table>
 
