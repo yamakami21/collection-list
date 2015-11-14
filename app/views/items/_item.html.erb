@@ -12,7 +12,7 @@
             </div>
             <div class="detail">
                 <span class="timestamp">
-                    Posted <%= time_ago_in_words(item.created_at) %> ago.
+                    <%= item.created_at.in_time_zone("Asia/Tokyo").to_s(:date) %>
                 </span>
                 <% if logged_in? %>
                     <% if current_user == item.user %>
