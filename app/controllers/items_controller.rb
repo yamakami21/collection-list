@@ -22,7 +22,8 @@ class ItemsController < ApplicationController
     return redirect_to root_url if @item.nil?
     @item.destroy
     flash[:success] = "投稿を削除しました。"
-    redirect_to request.referrer || root_url
+    # redirect_to request.referrer || root_url
+    redirect_to user_path(current_user)
   end
   
   private

@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :followings, :followers, :likings]
   
   def show
-    @items =@user.items.page(params[:page]).per(10)
+    @items =@user.items.page(params[:page]).per(10).order(created_at: :desc)
   end
   
   def new
