@@ -5,13 +5,18 @@
         
         <table class="status-profile-list">
             <tr>
-                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <td>
                     <% if likings.image? %>
                   　　<%= image_tag likings.image.thumb.url %>
                   　<% else %>
                   　<% end %>
-                    <%= link_to likings.name, item_path(likings.id), class: "name" %></td>
-                    <td><%= likings.description%></td>
+                </td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <%= link_to likings.name, item_path(likings.id), class: "name" %>
+                </td>
+                <td class="ltem-description">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <%= likings.description%>
+                </td>
 
             </tr>
         </table>

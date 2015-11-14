@@ -6,20 +6,20 @@
             <%= render 'shared/error_messages', object: f.object %>
             <%= f.label :name, "ユーザー名" %>
             <div class="form-group">
-                <%= f.text_field :name, class: "form-control", placeholder: "ニックネームを入力して下さい。" %>
+                <%= f.text_field :name, class: "form-control", id: "form-large", placeholder: "ニックネームを入力して下さい。" %>
             </div>
     
             <%= f.label :email, "メールアドレス" %>
             <div class="form-group">
-                <%= f.text_field :email, class: "form-control", placeholder: "メールアドレスを入力して下さい。"%>
+                <%= f.text_field :email, class: "form-control", id: "form-large", placeholder: "メールアドレスを入力して下さい。"%>
             </div>
     
             <%= f.label :password, "パスワード" %>
             <div class="form-group">
-                <%= f.password_field :password, class: "form-control", placeholder: "パスワード" %>
+                <%= f.password_field :password, class: "form-control", id: "form-large", placeholder: "パスワード" %>
             </div>
     
-            <%= f.password_field :password_confirmation, class: "form-control", placeholder: "パスワード(確認)" %>
+            <%= f.password_field :password_confirmation, class: "form-control", id: "form-large", placeholder: "パスワード(確認)" %>
             <div class="submit-group">
                 <%= f.submit "登録", class: "btn btn-large"%>
             </div>

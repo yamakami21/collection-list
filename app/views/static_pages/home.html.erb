@@ -1,4 +1,9 @@
-<h1 id="home_logo">Plant-Collection</h1>
+<div class="home_logo">
+  <h1>Plant-Catalog</h1>
+  <div id="sub-title">植物を共有しよう。</div>
+</div>
+<HR class="hr">
+
 <% if logged_in? %>
   <div class="row">
     <h3>植物一覧</h3>
@@ -7,11 +12,9 @@
     <%= paginate(@feed_items)%>
   </div>
 <% else %>
-  <div class="center jumbotron">
-
-
-    <p>Plactionとは...</p>
-    <p>自分の好きな植物を共有できる</p>
-  </div>
-  <%= link_to "今すぐ始めよう！", signup_path, class: "btn btn-lg btn-primary" %>
+  <!--<div class="center jumbotron">-->
+  <!--  <p>Plactionとは...</p>-->
+  <!--  <p>自分の好きな植物を共有できる</p>-->
+  <!--</div>-->
+  <!--<%= link_to "今すぐ始めよう！", signup_path, class: "btn btn-lg btn-primary" %>-->
 <% end %>

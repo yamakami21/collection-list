@@ -6,6 +6,8 @@
         <h1><%= user.name %></h1>
     </div>
     <div class="status">
+        <%= render 'follow_form' if logged_in? %>
+        <br>
         <ul>
             <li>
                 <div class="status-label">フォロー</div>
@@ -26,6 +28,5 @@
                 </div>
             </li>
         </ul>
-    <%= render 'follow_form' if logged_in? %>
     </div>
 </div>

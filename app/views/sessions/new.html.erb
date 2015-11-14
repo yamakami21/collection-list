@@ -1,12 +1,12 @@
 <div class="box">
-    <h1 class="box-title", id="login_logo">Plaction</h1>
+    <h1 class="box-title", id="login_logo">Plalog</h1>
     <div class="box-inner form_login">
         <%= form_for(:session, url: login_path) do |f| %>
         <div class="form-group">
-            <%= f.text_field :email, class: "form-control", placeholder: "メールアドレス"%>
+            <%= f.text_field :email, class: "form-control", id: "form-large", placeholder: "メールアドレス"%>
         </div>
         <div class="form-group">
-            <%= f.password_field :password, class: "form-control", placeholder: "パスワード" %>
+            <%= f.password_field :password, class: "form-control", id: "form-large", placeholder: "パスワード" %>
         </div>   
         <div class="submit-group">
             <%= f.submit "ログイン", class: "btn btn-large"%>

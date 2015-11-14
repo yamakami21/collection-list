@@ -1,7 +1,5 @@
 <%= render 'profile', user: @user %>
-
+<HR class="hr">
 <h3>植物一覧(<%= @user.items.count%>)</h3>
-<% @items.each do |item| %>
-  <%= render partial: 'items/item', locals: { item: item } %>
-<% end %>
-<%= paginate(@items) %>
+
+<%= render 'items/list' , items: @items %>
