@@ -11,18 +11,28 @@
     background: #fff;
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
+    
     .img-wrap {
       width: 270px;
       height: 270px;
       padding: 10px;
-      display: table-cell;
-      vertical-align: middle;
-      text-align: center;
+      // display: table-cell;
+      // vertical-align: middle;
+      // text-align: center;
+      display: inline-block;
+      background-color: #ccc;
+      background-position: center center;
+      background-repeat: no-repeat;
+      margin: 5px;
+      border: 1px solid #ccc;
+      background-size: cover;
       img {
         max-height: 250px;
       }
     }
   }
+
+
   .detail {
     height: 55px;
     padding: 10px;

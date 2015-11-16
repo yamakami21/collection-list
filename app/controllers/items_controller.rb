@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   
   def show
-    @item =current_user.items.find_by(id: params[:id])
+    @item = Item.find_by(id: params[:id])
   end
   def new
     @item = current_user.items.build if logged_in?

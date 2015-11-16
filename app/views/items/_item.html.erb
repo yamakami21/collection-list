@@ -4,7 +4,9 @@
                 <div class="img-wrap">
                   <%= link_to item_path(item) do %>
                     <% if item.image? %>
-                  　　<%= image_tag item.image.thumb.url %>
+                    
+                  　　<span class="image" style="background-image: url('<%= item.image.thumb.url %>')"></span>
+                  　
                   　<% else %>
                   　<% end %>
                   <% end %>
@@ -16,9 +18,6 @@
                 </span>
                 <% if logged_in? %>
                     <% if current_user == item.user %>
-                        <span class="delete">
-                            <%= link_to "削除", item, method: :delete, data: { confirm: "削除します。"}%>
-                        </span>
                     <% else %>
                         <span id="like_form-<%= item.id %>">
                             <%= render partial: 'likes/like_form',locals: { item: item } %>
